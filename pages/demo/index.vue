@@ -3,9 +3,29 @@
     <div>
       <h1 class="title">kslab-PC</h1>
       <div>demo page</div>
+      <Button type="primary" @click="increment">计数</Button>
+      <div>{{ count }}</div>
     </div>
   </div>
 </template>
+
+<script>
+import { mapState, mapMutations } from 'vuex'
+
+export default {
+  name: 'DemoPage',
+  computed: {
+    ...mapState('demo', {
+      count: state => state.count
+    })
+  },
+  methods: {
+    ...mapMutations('demo', {
+      increment: 'increment'
+    })
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .container {
