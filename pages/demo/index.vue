@@ -3,8 +3,14 @@
     <div>
       <h1 class="title">kslab-PC</h1>
       <div>demo page</div>
+      <!-- 用法一 -->
       <Button type="primary" @click="increment">计数</Button>
       <div>{{ count }}</div>
+      <!-- 用法二 -->
+      <Button type="primary" @click="$store.commit('demo/increment')"
+        >计数</Button
+      >
+      <div>{{ $store.state.demo.count }}</div>
     </div>
   </div>
 </template>
