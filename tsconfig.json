@@ -1,0 +1,65 @@
+{
+  // 编译选项
+  "compilerOptions": {
+    // 编译输出目标 ES 版本
+    "target": "esnext",
+    // 采用的模块系统
+    "module": "esnext",
+    // 如何处理模块
+    "moduleResolution": "node",
+    // 给错误和消息设置样式，使用颜色和上下文。
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "esModuleInterop": true,
+    // 启用装饰器
+    "experimentalDecorators": true,
+    // 允许编译javascript文件
+    "allowJs": true,
+    // 是否包含可以用于 debug 的 sourceMap
+    "sourceMap": true,
+    // 以严格模式解析
+    "strict": true,
+    // 忽略 any 的类型检查,
+    "noImplicitAny": false,
+    // 定义一个变量就必须给它一个初始值
+    "strictPropertyInitialization": false,
+    "noEmit": true,
+    // 解析非相对模块名的基准目录
+    "baseUrl": ".",
+    // 指定特殊模块的路径
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    // 设置引入的定义文件
+    "types": [
+      "@types/jest",
+      "@types/node",
+      "@nuxt/vue-app"
+    ]
+  },
+  // ts 管理的文件
+  "include": [
+    "pages/**/*.ts",
+    "pages/**/*.tsx",
+    "pages/**/*.vue",
+    "layouts/**/*.ts",
+    "layouts/**/*.tsx",
+    "layouts/**/*.vue",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "components/**/*.vue",
+    "store/**/*.ts",
+    "server/**/*.ts",
+    "middleware/**/*.ts",
+  ],
+  // ts 排除的文件
+  "exclude": ["node_modules"]
+}

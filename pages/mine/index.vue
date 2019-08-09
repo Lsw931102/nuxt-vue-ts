@@ -2,30 +2,25 @@
   <div class="container">
     <div>
       <h1 class="title">{{ title }}</h1>
-      <div>demo page</div>
-      <!-- 用法一 -->
-      <Button type="primary" @click="increment">计数</Button>
-      <div>{{ count }}</div>
-      <!-- 用法二 -->
       <Button type="primary" @click="$store.commit('demo/increment')"
         >计数</Button
       >
       <div>{{ $store.state.demo.count }}</div>
-      <nuxt-link to="/mine">个人中心</nuxt-link>
+      <nuxt-link to="/mine/mineOrder">我的订单</nuxt-link>
+      <nuxt-link to="/mine/activityList">我的活动列表</nuxt-link>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-// import { mapState, mapMutations } from 'vuex'
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
   // components: {},
   // props: {}
 })
-export default class DemoPage extends Vue {
-  title: string = 'kslab-PC'
+export default class MineHome extends Vue {
+  title: string = '个人中心'
 
   get count() {
     return this.$store.state.demo.count

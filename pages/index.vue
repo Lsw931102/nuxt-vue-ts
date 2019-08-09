@@ -19,14 +19,15 @@
   </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import Logo from '~/components/Logo'
 
-export default {
-  components: {
-    Logo
-  }
-}
+@Component({
+  components: { Logo }
+  // props: {}
+})
+export default class MineHome extends Vue {}
 </script>
 
 <style lang="scss" scoped>
