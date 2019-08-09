@@ -33,7 +33,7 @@ import { getList } from '~/api/index.js'
     // 请求
     return getList({
       category_id: '144cab0f-3d39-4c65-84c5-dd1c7ff78352',
-      type: 3
+      type: 2
     })
       .then(res => {
         return { ss: res.data }
