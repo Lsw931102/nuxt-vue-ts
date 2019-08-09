@@ -24,5 +24,6 @@ $ yarn generate
 1. css 名称用中划线断开（eg.tab-box)
 2. 图片命名用下划线断开（eg.order_all.png)
 3. 文件用到多张图片请建立 images 文件夹并在统一的 index.ts 中导出，方便后续修改
+4. 页面文件夹用驼峰命名，组件命名用中划线断开，命名都尽量用两个及以上字段，不用单字段
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
