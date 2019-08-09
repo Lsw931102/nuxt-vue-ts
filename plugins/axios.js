@@ -24,13 +24,11 @@ service.interceptors.response.use(
     if (error.response) {
       switch (error.response.states) {
         case 400: {
-          if (
-            error.response &&
-            error.response.data &&
-            error.response.data.message
-          ) {
-            alert(400)
-          }
+          alert(400)
+          break
+        }
+        case 401: {
+          alert(401)
           break
         }
       }
