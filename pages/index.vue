@@ -14,6 +14,9 @@
         <Button target="_blank" to="https://www.iviewui.com/">iView</Button>
         <nuxt-link to="/demo">demo page</nuxt-link>
         <nuxt-link to="/error">error page</nuxt-link>
+        <div>
+          {{ ss }}
+        </div>
       </div>
     </div>
   </div>
@@ -21,10 +24,25 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Logo from '~/components/Logo'
+import Logo from '~/components/Logo.vue'
+import { getVerifyCode } from '~/api/index.js'
 
 @Component({
-  components: { Logo }
+  components: { Logo },
+  asyncData(op) {
+    // 请求
+    return getVerifyCode({
+      category_id: '144cab0f-3d39-4c65-84c5-dd1c7ff78352',
+      type: 3
+    })
+      .then(res => {
+        return { ss: res.data }
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  },
+  created() {}
   // props: {}
 })
 export default class MineHome extends Vue {}
