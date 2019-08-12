@@ -14,9 +14,7 @@
         <Button target="_blank" to="https://www.iviewui.com/">iView</Button>
         <nuxt-link to="/demo">demo page</nuxt-link>
         <nuxt-link to="/error">error page</nuxt-link>
-        <div>
-          {{ ss }}
-        </div>
+        <div>{{ ss }}</div>
       </div>
     </div>
   </div>
@@ -24,8 +22,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import Logo from '~/components/Logo.vue'
-import { getList } from '~/servers/index.js'
+import { getList } from '~/services/index'
+import Logo from '~/components/Logo/index.vue'
 
 @Component({
   components: { Logo },

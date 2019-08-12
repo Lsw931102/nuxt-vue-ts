@@ -87,5 +87,8 @@ module.exports = {
      */
     vendor: ['@nuxtjs/axios', '@nuxtjs/proxy', 'iview'],
     extend(config, ctx) {}
+  },
+  server: {
+    port: 3001 // default: 3000
   }
 }
