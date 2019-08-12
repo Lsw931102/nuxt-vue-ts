@@ -25,23 +25,21 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Logo from '~/components/Logo.vue'
-import { getList } from '~/api/index.js'
+import { getList } from '~/servers/index.js'
 
 @Component({
   components: { Logo },
   asyncData(op) {
     // 请求
-    return getList({
-      category_id: '144cab0f-3d39-4c65-84c5-dd1c7ff78352',
-      type: 2
-    })
+    return getList()
       .then(res => {
-        return { ss: res.data }
+        return { ss: res.data.data }
       })
       .catch(err => {
         console.log(err)
       })
-  }
+  },
+  created() {}
   // props: {}
 })
 export default class MineHome extends Vue {}
